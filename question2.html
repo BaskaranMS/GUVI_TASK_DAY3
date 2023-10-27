@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 3 TASK</title>
+</head>
+<body>
+    <h1><b>XMLHttpRequest</b></h1>
+    <h2><b>To print all country flags in console</b></h2>
+    <script>
+        let my = new XMLHttpRequest();
+        my.open('GET', 'https://restcountries.com/v3.1/all');
+        my.send();
+        my.onload = function(){
+            let a = JSON.parse(my.responseText);
+            for(let i = 0; i<a.length; i++){
+                console.log(a[i].flags.png)
+            }
+        };
+
+    </script>
+</body>
+</html>
